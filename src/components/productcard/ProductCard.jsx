@@ -6,8 +6,8 @@ export default function ProductCard({nombre, precio, img, stock}) {
     <div className={`flex-wrap h-128 w-64 rounded-xl  border p-4  bg-white transition-all ${!stock ? 'bg-red-50 border-red-500 border-4' : 'border-gray-200'}`}>
 
       <div>
-      <div className='h-68 w-auto'>
-        <img src={img} className="aspect-auto rounded-lg" alt={nombre}/>
+      <div className='h-68 w-auto bord'>
+        <img src={img} className="aspect-auto " alt={nombre}/>
       </div>
     
       <h5 className="text-xl font-bold text-gray-800">{nombre}</h5>
