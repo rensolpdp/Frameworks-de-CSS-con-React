@@ -74,7 +74,7 @@ export default function App() {
     <div className={styles.appContainer}>
       <Navbar />
       
-      <div className="flex flex-wrap gap-4">
+      <div >
             {productos.map((p) => (
               <ProductCard key={p.id} {...p} />
             ))}
