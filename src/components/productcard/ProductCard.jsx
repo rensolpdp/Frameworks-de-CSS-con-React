@@ -6,8 +6,8 @@ export default function ProductCard({ nombre, precio, imagen, stock }) {
   const precioFormateado = precio.toLocaleString('es-AR');
 
   return (
-    <div
-      className={`bg-white shadow-md rounded-2xl overflow-hidden m-2 relative w-64 ${sinStock ? 'opacity-75' : ''}`}
+    <div 
+      className={` flex flex-col gap-4 bg-white shadow-md rounded-2xl overflow-hidden m-2 relative w-64 ${sinStock ? 'opacity-75' : ''}`}
     >
       {/* Badge de Sin Stock */}
       {sinStock && (
@@ -37,6 +37,7 @@ export default function ProductCard({ nombre, precio, imagen, stock }) {
         <p className="text-gray-500 font-bold text-xl mb-3">\${precioFormateado}</p>
         
         {/* Botón */}
+        <div className=''>
         <button
           className={`w-full py-2 rounded-lg font-semibold transition-colors ${
             sinStock 
@@ -47,6 +48,7 @@ export default function ProductCard({ nombre, precio, imagen, stock }) {
         >
           {sinStock ? 'Sin stock' : 'Agregar'}
         </button>
+        </div>
       </div>
     </div>
   );

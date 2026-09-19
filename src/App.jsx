@@ -73,14 +73,8 @@ export default function App() {
   return (
     <div className={styles.appContainer}>
       <Navbar />
-      <div className='flex-wrap'>
-      <div> holaadadasda1221321321</div>
-      <div> holaadadasda1221321321</div>
-      <div> holaadadasda1221321321</div>
-      <div> holaadadasda1221321321</div>
-      <div> holaadadasda1221321321</div>
-      </div>
-      <div className="Flex flex-wrap">
+      
+      <div className="flex flex-wrap gap-4">
             {productos.map((p) => (
               <ProductCard key={p.id} {...p} />
             ))}
