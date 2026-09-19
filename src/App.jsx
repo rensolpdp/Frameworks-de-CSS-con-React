@@ -6,10 +6,10 @@ import styles from './App.module.css';
 import ProductCard from './components/productcard/ProductCard';
 
 const productos = [
-  { id: 1, nombre: 'Cera para cabello', precio: 4500, imagen: 'https://via.placeholder.com/300x200?text=Cera', stock: 10 },
-  { id: 2, nombre: 'Shampoo profesional', precio: 12000, imagen: 'https://via.placeholder.com/300x200?text=Shampoo', stock: 0 },
-  { id: 3, nombre: 'Maquinita de corte', precio: 35000, imagen: 'https://via.placeholder.com/300x200?text=Maquinita', stock: 3 },
-  { id: 4, nombre: 'Loción para barba', precio: 6000, imagen: 'https://via.placeholder.com/300x200?text=Locion', stock: 7 },
+  { id: 1, nombre: 'Cera para cabello', precio: 4500, imagen: 'https://imgs.search.brave.com/mkpXN3n8KVCYFtPsKVgjJgKm8iJEkvaKWlIjJosmBC8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk3NzU0NS1NTFU3/ODUzNjIwMTAwM18w/ODIwMjQtRS53ZWJw', stock: 10 },
+  { id: 2, nombre: 'Shampoo profesional', precio: 12000, imagen: 'https://imgs.search.brave.com/p-yHj2C-xJdON-VWIsUVVssUVdUwcIoM7SZ6fgoihDs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzYxODg5MC1NTEE1/MTM2MTg1NzY3NV8w/ODIwMjItRS53ZWJw', stock: 0 },
+  { id: 3, nombre: 'Maquinita de corte', precio: 35000, imagen: 'https://imgs.search.brave.com/PzTfYYxhxpSfFsipMTniMU3vs9HyoiPHTgv_Kazr4yk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGlwZXJkZWxhcGVs/dS5jb20uYXIvd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDcv/bSVDMyVBMXF1aW5h/LWNvcnRlLW1hZ2lj/LWNsaXAtY2FibGUt/d2FobC1wZWxvLWhl/cnJhbWllbnRhcy1j/b3J0ZS1jYWJlemEt/ZWwtaGlwZXItZGUt/bGEtcGVsdS0zMDB4/MzAwLnBuZw', stock: 3 },
+  { id: 4, nombre: 'Loción para barba', precio: 6000, imagen: 'https://imgs.search.brave.com/TDRDS27bz3PNOglXrjp6GtvR3oT239q-bvjVLGBTTZY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iYXJi/aWVyZHV3ZWIuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy9lbGVt/ZW50b3IvdGh1bWJz/L2xvdGlvbi1hY2Nl/bGVyYXRldXItcG91/c3NlLWJhcmJlLXBv/aWxzLWltcGVyaWFs/LWJlYXJkLXBzMDZ5/M3Q3Y2RzczllcGtj/cTk2YXFjZ3dtdHU2/Y3ZmaTRiaG9hYWtn/MC5qcGc', stock: 7 },
 ];
 
 const turnosIniciales = [
@@ -33,15 +33,6 @@ export default function App() {
   return (
     <div className={styles.appContainer}>
       <Navbar />
-      <Main 
-        turnos={turnosFiltradosYOrdenados}
-        estadoPantalla={estadoPantalla}
-        filtroActual={filtroServicio}
-        ordenActual={orden}
-        cambiarFiltro={(e) => setFiltroServicio(e.target.value)}
-        ordenar={() => setOrden(orden === 'asc' ? 'desc' : 'asc')}
-        simularEstado={(nuevoEstado) => setEstadoPantalla(nuevoEstado)}
-      />
       <div className="d-flex flex-wrap p-3">
             {productos.map((p) => (
               <ProductCard key={p.id} {...p} />
