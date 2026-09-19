@@ -6,11 +6,51 @@ import styles from './App.module.css';
 import ProductCard from './components/productcard/ProductCard';
 
 const productos = [
-  { id: 1, nombre: 'Cera para cabello', precio: 4500, imagen: 'https://imgs.search.brave.com/mkpXN3n8KVCYFtPsKVgjJgKm8iJEkvaKWlIjJosmBC8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk3NzU0NS1NTFU3/ODUzNjIwMTAwM18w/ODIwMjQtRS53ZWJw', stock: 10 },
-  { id: 2, nombre: 'Shampoo profesional', precio: 12000, imagen: 'https://imgs.search.brave.com/p-yHj2C-xJdON-VWIsUVVssUVdUwcIoM7SZ6fgoihDs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzYxODg5MC1NTEE1/MTM2MTg1NzY3NV8w/ODIwMjItRS53ZWJw', stock: 0 },
-  { id: 3, nombre: 'Maquinita de corte', precio: 35000, imagen: 'https://imgs.search.brave.com/PzTfYYxhxpSfFsipMTniMU3vs9HyoiPHTgv_Kazr4yk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGlwZXJkZWxhcGVs/dS5jb20uYXIvd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDcv/bSVDMyVBMXF1aW5h/LWNvcnRlLW1hZ2lj/LWNsaXAtY2FibGUt/d2FobC1wZWxvLWhl/cnJhbWllbnRhcy1j/b3J0ZS1jYWJlemEt/ZWwtaGlwZXItZGUt/bGEtcGVsdS0zMDB4/MzAwLnBuZw', stock: 3 },
-  { id: 4, nombre: 'Loción para barba', precio: 6000, imagen: 'https://imgs.search.brave.com/TDRDS27bz3PNOglXrjp6GtvR3oT239q-bvjVLGBTTZY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iYXJi/aWVyZHV3ZWIuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy9lbGVt/ZW50b3IvdGh1bWJz/L2xvdGlvbi1hY2Nl/bGVyYXRldXItcG91/c3NlLWJhcmJlLXBv/aWxzLWltcGVyaWFs/LWJlYXJkLXBzMDZ5/M3Q3Y2RzczllcGtj/cTk2YXFjZ3dtdHU2/Y3ZmaTRiaG9hYWtn/MC5qcGc', stock: 7 },
+  {
+    id: 1,
+    nombre: 'Cera Modeladora Fuerte',
+    precio: '12400',
+    imagen: 'https://imgs.search.brave.com/q4I5lM2O4fiHBom-OzHfRsaXhYLwMIGILnMuI5LdPAc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vbGV1/bnNiZWF1dHkuY29t/L2Nkbi9zaG9wL2Zp/bGVzL0NlcmFtb2Rl/bGFkb3JhZXh0cmFm/dWVydGViYXJiZXJz/aG9wMTMwZy5wbmc_/dj0xNzIzNTg1MzYy/JndpZHRoPTE0NDU',
+    stock: 15
+  },
+  {
+    id: 2,
+    nombre: 'Tijeras de Corte Profesional',
+    precio: '48000',
+    imagen: 'https://imgs.search.brave.com/ahOF9z9Xoyg3FgF02au5o-g5PFyj7WL5eWvrV7Sdalc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z2FkbmljLmNvbS5h/ci9fbmV4dC9pbWFn/ZT91cmw9aHR0cHM6/Ly9zdGF0aWMuYmlk/Y29tLmNvbS5hci9w/dWJsaWNhY2lvbmVz/TUwvcHJvZHVjdG9z/L1RJSkVSQVMyLzEw/MDB4MTAwMC1USUpF/UkFTMi5qcGcmdz0z/ODQwJnE9NzU',
+    stock: 5
+  },
+  {
+    id: 3,
+    nombre: 'Navaja de Afeitar Tradicional',
+    precio: '18999',
+    imagen: 'https://imgs.search.brave.com/04SGJKEQJqFVvWxY80ckEiHGSjAl445q2e-RoCoXvdc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzYzMjEyNS1NTEE0/MjkzNTQ5ODUzOF8w/NzIwMjAtRS53ZWJw',
+    stock: 0 // Dejamos este en 0 para probar tu tarjeta condicional "Agotado"
+  },
+  {
+    id: 4,
+    nombre: 'Shampoo para Barba & Rostro',
+    precio: '10500',
+    imagen: 'https://imgs.search.brave.com/La-JgauFCyBkdtRcF0I_5t8YI_TxVxIYPfbXeJAP5gA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vTC1N/QVItVEFDLWZvci1N/ZW4tQmVhcmQtYW5k/LUZhY2UtU2hhbXBv/by01LWZsLW96LVRB/Qy1TaGFtcG9vLXBh/cmEtQmFyYmEteS1S/b3N0cm9fMzQ5ZjEy/YmYtMjRhOC00ZjY4/LTk1MTEtNjc0YWNm/NjM1ZjhjLjk5ZDUx/ZjhjMjUyZDg2NDE0/NTZjMDNlZjViYTdh/NmI0LmpwZWc_b2Ru/SGVpZ2h0PTY0MCZv/ZG5XaWR0aD02NDAm/b2RuQmc9RkZGRkZG',
+    stock: 8
+  },
+  {
+    id: 5,
+    nombre: 'Capa de Barbero Negra Premium',
+    precio: '16999',
+    imagen: 'https://imgs.search.brave.com/sGEm700Ya37UmW_t9HMRmmn73LcEz4P7D_QxxPyFTT4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFWZ3B1K3kyK0wu/anBn',
+    stock: 12
+  },
+  {
+    id: 6,
+    nombre: 'Peine de Fibra de Carbono',
+    precio: '3500',
+    imagen: 'https://imgs.search.brave.com/bLuFXl_8DUotMcDxUN13k5CzdKSM2LLGhgdoQWNbARE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucmFwcGkuY29t/Lm14L3Byb2R1Y3Rz/L2E1NGZhZDc0LWYw/MTUtNGM1Zi05YTQ1/LWJmMGQ5MWQzNjY5/OC5wbmc_ZD05MDB4/NzUwJmU9d2VicCZx/PTMw',
+    stock: 0
+  },
 ];
+
+
 
 const turnosIniciales = [
   { id: 1, cliente: 'Nico Rios', servicio: 'Corte + Barba', precio: 11000, barbero: 'Pepe', notas: 'Cliente habitual' },
