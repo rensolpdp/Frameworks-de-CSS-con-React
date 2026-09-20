@@ -74,11 +74,22 @@ export default function App() {
     <div className={styles.appContainer}>
       <Navbar />
       
-      <div >
-            {productos.map((p) => (
-              <ProductCard key={p.id} {...p} />
-            ))}
-          </div>
+      <section className="section">
+        <h2 className="title is-4">Productos</h2>
+        <div className="columns is-multiline">
+          {productos.map(producto => (
+            <div className="column is-one-quarter" key={producto.id}>
+              <ProductCard
+                nombre={producto.nombre}
+                precio={producto.precio}
+                imagen={producto.imagen}
+                stock={producto.stock}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
